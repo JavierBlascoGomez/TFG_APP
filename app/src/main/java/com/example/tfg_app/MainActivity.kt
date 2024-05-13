@@ -24,8 +24,11 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.compose.TFG_APPTheme
+import com.example.tfg_app.ui.screens.StatsScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -50,9 +53,11 @@ fun TFGScaffold(navController: NavHostController) {
     ) {
         val paddingValues = it
 
-        /*NavHost(navController = navController, startDestination = "LoginScreen") {
-
-        }*/
+        NavHost(navController = navController, startDestination = "StatsScreen") {
+            composable("StatsScreen") {
+                StatsScreen()
+            }
+        }
     }
 }
 
