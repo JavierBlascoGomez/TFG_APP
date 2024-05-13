@@ -6,6 +6,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
 import com.example.tfg_app.ui.theme.TFG_APPTheme
 
 class MainActivity : ComponentActivity() {
@@ -16,7 +17,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             TFG_APPTheme {
                 Scaffold {
-
+                    Text(text = "Hello World!!")
                 }
             }
         }
