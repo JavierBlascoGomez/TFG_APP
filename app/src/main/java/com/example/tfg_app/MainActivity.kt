@@ -55,7 +55,7 @@ fun TFGScaffold(navController: NavHostController) {
 
         NavHost(navController = navController, startDestination = "StatsScreen") {
             composable("StatsScreen") {
-                StatsScreen()
+                StatsScreen(paddingValues)
             }
         }
     }
