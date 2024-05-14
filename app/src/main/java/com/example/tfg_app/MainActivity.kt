@@ -28,7 +28,13 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.compose.TFG_APPTheme
+import com.example.tfg_app.ui.screens.CalculateScreen
+import com.example.tfg_app.ui.screens.LoginScreen
+import com.example.tfg_app.ui.screens.ProfileScreen
+import com.example.tfg_app.ui.screens.RegisterScreen
+import com.example.tfg_app.ui.screens.ResultScreen
 import com.example.tfg_app.ui.screens.StatsScreen
+import com.example.tfg_app.ui.screens.TipsScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,9 +59,27 @@ fun TFGScaffold(navController: NavHostController) {
     ) {
         val paddingValues = it
 
-        NavHost(navController = navController, startDestination = "StatsScreen") {
+        NavHost(navController = navController, startDestination = "LoginScreen") {
+            composable("LoginScreen") {
+                LoginScreen(navHostController = navController, paddingValues = paddingValues)
+            }
+            composable("RegisterScreen") {
+                RegisterScreen(navHostController = navController, paddingValues = paddingValues)
+            }
             composable("StatsScreen") {
-                StatsScreen(paddingValues)
+                StatsScreen(paddingValues = paddingValues)
+            }
+            composable("ProfileScreen") {
+                ProfileScreen(paddingValues = paddingValues)
+            }
+            composable("CalculateScreen") {
+                CalculateScreen(navHostController = navController)
+            }
+            composable("ResultScreen") {
+                ResultScreen(navHostController = navController, paddingValues = paddingValues)
+            }
+            composable("TipsScreen") {
+                TipsScreen(paddingValues = paddingValues)
             }
         }
     }
